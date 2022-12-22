@@ -1,17 +1,24 @@
-import React,{Fragment, useState} from 'react'
+import React,{Fragment, useState, useEffect} from 'react'
 import WorkDetail from '../details/WorkDetail';
 import '../css/Work.css'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 const Work = () => {
     const [detail, setDetail] = useState(WorkDetail);
+
+    useEffect(() => {
+
+        Aos.init({ duration : 2500 , once : true ,easing : "ease"})
+    },[])
 
   return (
     <Fragment>
         <section className='work'>
             <div className='overlay'>
-
             </div>
-            <div className='work-container'>
+
+            <div data-aos="fade-up" className='work-container'>
                 <div className='work-heading'>
                     <span>work flow</span>
                     <h2>How It Work</h2>

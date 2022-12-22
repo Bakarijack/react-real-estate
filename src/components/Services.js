@@ -1,13 +1,20 @@
-import React, {Fragment, useState} from 'react'
+import React, {Fragment, useState, useEffect} from 'react'
 import ServicesDetail from "../details/ServiceDetail"
 import '../css/Services.css'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 
 const Services = () => {
     const [detail, setDetail] = useState(ServicesDetail);
 
+    useEffect(() => {
+
+        Aos.init({ duration : 2000 , once : true ,easing : "ease"})
+    },[])
+
   return (
     <Fragment>
-        <section className='services'>
+        <section data-aos = "fade-up" className='services'>
 
             <div className='heading'>
                 <span>Our Services</span>
